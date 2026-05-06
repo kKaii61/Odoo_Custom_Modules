@@ -1,0 +1,142 @@
+// Quick Tree View Popup Styles
+.quick-tree-view-popup {
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    
+    // Ensure proper z-index layering
+    z-index: 1000;
+    
+    // Smooth transitions
+    transition: opacity 0.15s ease-in-out;
+    
+    // Reset any conflicting styles
+    margin: 0;
+    padding: 0;
+    
+    .quick-tree-view-popup-content {
+        // Ensure content doesn't overflow
+        max-width: 100%;
+        max-height: 100%;
+        overflow: auto;
+        
+        .field-group {
+            margin-bottom: 1rem;
+            
+            .field-label {
+                font-weight: 600;
+                color: #495057;
+                margin-bottom: 0.25rem;
+                font-size: 0.8rem;
+                text-transform: capitalize;
+            }
+            
+            .field-value {
+                color: #212529;
+                padding: 0.25rem 0;
+            }
+        }
+        
+        .related-records {
+            margin-top: 0.5rem;
+            
+            .o_list_table {
+                border: 1px solid #dee2e6;
+                border-radius: 4px;
+                font-size: 0.8rem;
+                
+                thead th {
+                    background-color: #f8f9fa;
+                    border-bottom: 2px solid #dee2e6;
+                    font-weight: 600;
+                    padding: 0.5rem;
+                    text-align: left;
+                    font-size: 0.75rem;
+                    text-transform: capitalize;
+                }
+                
+                tbody td {
+                    padding: 0.4rem 0.5rem;
+                    border-bottom: 1px solid #e9ecef;
+                    vertical-align: top;
+                    
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+                
+                tbody tr:hover {
+                    background-color: #f8f9fa;
+                }
+                
+                tbody tr:last-child td {
+                    border-bottom: none;
+                }
+            }
+            
+            .simple-list {
+                border: 1px solid #dee2e6;
+                border-radius: 4px;
+                max-height: 150px;
+                overflow-y: auto;
+                
+                .list-item {
+                    padding: 0.4rem 0.5rem;
+                    border-bottom: 1px solid #e9ecef;
+                    font-size: 0.8rem;
+                    
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                    
+                    &:hover {
+                        background-color: #f8f9fa;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Loading state
+    &.loading {
+        .quick-tree-view-popup-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            
+            &::before {
+                content: "Loading...";
+                color: #6c757d;
+                font-style: italic;
+            }
+        }
+    }
+    
+    // Error state
+    &.error {
+        .quick-tree-view-popup-content {
+            color: #dc3545;
+            font-weight: 500;
+            text-align: center;
+            padding: 1rem;
+        }
+    }
+    
+    // Text danger class for error messages
+    .text-danger {
+        color: #dc3545;
+        font-weight: 500;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+// Ensure popup appears above other UI elements
+.modal-backdrop {
+    z-index: 999;
+}
+
+.dropdown-menu {
+    z-index: 1001;
+}

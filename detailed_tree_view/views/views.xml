@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="quick_tree_view_sale_order">
+            <field name="name">quick_tree_view_sale_order</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <quick_tree_view>
+                    <field name="order_line">
+                        <tree>
+                            <field name="product_id"/>
+                        </tree>
+                    </field>
+                </quick_tree_view>
+            </field>
+        </record>
+        <record id="sale.action_quotations_salesteams" model="ir.actions.act_window">
+            <field name="view_mode">tree,form,calendar,graph,kanban,pivot,quick_tree_view</field>
+        </record>
+    </data>
+</odoo>

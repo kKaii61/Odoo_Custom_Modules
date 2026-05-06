@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="detailed_tree_view.QuickTreeViewPopup">
+        <!-- The popup content is rendered dynamically in the mount method -->
+        <div class="quick-tree-view-popup-content">
+            TEST
+            <!-- View will be mounted here -->
+        </div>
+    </t>
+</templates>

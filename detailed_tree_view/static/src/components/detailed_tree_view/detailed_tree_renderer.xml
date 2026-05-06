@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+   <t t-name="detailed_tree_view.ListRenderer.RecordRow" t-inherit="web.ListRenderer.RecordRow" t-inherit-mode="extension" owl="1">
+        <xpath expr="//tr/td[@t-set='useUnlink']" position="before">
+            <t t-if="hasQuickViewDefined">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </t>
+        </xpath>
+   </t>
+</templates>
