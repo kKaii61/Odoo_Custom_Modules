@@ -1,0 +1,12 @@
+include README.md
+include LICENSE
+include __manifest__.py
+recursive-include i18n/
+recursive-include static/
+recursive-include views/
+recursive-include models/
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .DS_Store

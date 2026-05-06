@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Category for Chat Edit/Delete -->
+        <record id="module_category_chat_edit_delete" model="ir.module.category">
+            <field name="name">Chat Edit &amp; Delete</field>
+            <field name="description">Manage permissions for editing and deleting chat messages</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <!-- Group: Chat User (can edit messages) -->
+        <record id="group_chat_user" model="res.groups">
+            <field name="name">Chat User: Edit Messages</field>
+            <field name="category_id" ref="module_category_chat_edit_delete"/>
+            <field name="comment">Users can edit their own messages within time limits</field>
+        </record>
+
+        <!-- Group: Chat Admin (can delete messages) -->
+        <record id="group_chat_admin" model="res.groups">
+            <field name="name">Chat Admin: Delete Messages</field>
+            <field name="category_id" ref="module_category_chat_edit_delete"/>
+            <field name="implied_ids" eval="[(4, ref('group_chat_user'))]"/>
+            <field name="comment">Admins can delete any message within extended time limits (48 hours)</field>
+        </record>
+    </data>
+</odoo>

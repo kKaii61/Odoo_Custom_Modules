@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="chat_edit_and_delete.MessageEdit" owl="1">
+        <div class="o-mail-Message-editContainer" t-if="props.message.isEditing">
+            <div class="o-mail-Message-editContent">
+                <textarea 
+                    class="o-mail-Message-editTextarea o_input"
+                    t-model="props.message.editContent"
+                    placeholder="Edit your message..."
+                    t-on-keydown="onKeyDownEdit"
+                    autofocus=""
+                />
+            </div>
+            <div class="o-mail-Message-editActions">
+                <button 
+                    class="btn btn-sm btn-primary o-mail-Message-saveEdit"
+                    t-on-click="onSaveEdit"
+                    title="Save (Enter)"
+                >
+                    <i class="fa fa-check"/> Save
+                </button>
+                <button 
+                    class="btn btn-sm btn-secondary o-mail-Message-cancelEdit"
+                    t-on-click="onCancelEdit"
+                    title="Cancel (Escape)"
+                >
+                    <i class="fa fa-times"/> Cancel
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>

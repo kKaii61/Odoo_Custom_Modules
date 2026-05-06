@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Odoo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet"
+          href="//apps.odoocdn.com/web/content/7297172-19e3d31/1/web.assets_frontend.css">
+    <link type="text/css" rel="stylesheet"
+          href="//apps.odoocdn.com/web/content/7297167-4b46669/1/web.assets_common.css">
+
+</head>
+<!-- odoo description page css -->
+<style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        line-height: 1.1;
+        color: #21272b;
+    }
+    
+    ul {
+        color: #222020;
+    }
+
+    * {
+        font-family: "Montserrat", sans-serif;
+    }
+
+
+</style>
+
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="row justify-content-md-between justify-content-center border-bottom align-items-center py-2 mx-0">
+        <div class="text-center mr-lg-5 mb-3 mb-lg-0">
+            <img src="images/logo.png"
+                 alt="logo">
+        </div>
+        <div class="col-6 col-md">
+            <div class="text-md-right">
+                <a href="https://apps.odoo.com/apps/modules/browse?search=kainowf" target="_blank"
+                   class="btn btn-sm py-2 px-md-3"
+                   style="font-size: 14px; background-color: #203038;color:#fff;"><i class="fa fa-list-alt mr-1"></i>
+                    <span class="d-none d-sm-inline"></span> All Apps
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Description  -->
+    <div class="px-2 px-lg-5 pt-3 pb-4 position-relative">
+        <div class="text-center py-3">
+            <h1 class="heading-title display-4" style="font-size: 2.2rem;  word-break: break-all;"><u>Odoo Chat
+                Edit/Delete</u></h1>
+            <div class="col-12 col-md-8 mx-auto px-0">
+                <p class="pt-2" style="font-size: 1.4rem;">
+                    This app is an extension to the already available chat functionality of Odoo. It provides the
+                    feature of editing and deleting an already sent message.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="suggested-app">
+        <div class="row pt-4 px-3">
+            <div class="w-100 mb-4 mb-lg-5">
+                <!-- Nav tabs -->
+                <div class="justify-content-center d-flex">
+                    <ul class="nav o_tab_nav"
+                        style="border: 1px solid #203038;  border-radius: 6px 6px;overflow:hidden;background-color:transparent">
+                        <li class="nav-item">
+                            <a class="nav-link active px-md-4 list-group-item-beta-dark list-group-item-action"
+                               data-toggle="pill"
+                               href="#pills-home"
+                               style="border-radius: 0px; border-right: 0px; opacity: 1;padding:16px;">FEATURES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-4 list-group-item-beta-dark list-group-item-action"
+                               data-toggle="pill"
+                               href="#pills-screenshot"
+                               style="border-radius: 0px; border-right: 0px; opacity: 1;padding:16px;">SETUP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-4 list-group-item-beta-dark list-group-item-action"
+                               data-toggle="pill"
+                               href="#Release"
+                               style="border-radius: 0px; border-right: 0px; opacity:1;padding:16px;">RELEASES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-4 list-group-item-beta-dark list-group-item-action"
+                               data-toggle="pill"
+                               href="#pills-contact" style="border-radius: 0px;opacity: 1;padding:16px;">FAQ's</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content py-5" style="font-weight: 400;">
+                    <div class="tab-pane fade active show" id="pills-home">
+
+                        <div class="text-left py-4">
+                            <h2 class="mb-3 display-4" style="font-size: 2.6rem; ">Features</h2>
+                        </div>
+                        <div class="card p-4 p-lg-5 mb-4 border-0"
+                             style="border-radius: .25rem;box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); color: #002966;">
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <ul class="list-unstyled" style="font-size:16px;color: #222020;">
+                                        <li class="d-flex align-items-baseline mb-3">
+                                            <img src="images/forward-arrow.svg" alt="arrow"
+                                                 style="width:15px;margin-right:10px">
+                                            <span>You can edit an already sent message up until 15 minutes from the time the message is first sent.</span>
+                                        </li>
+                                        <li class="d-flex align-items-baseline mb-3">
+                                            <div>
+                                                <img src="images/forward-arrow.svg" alt="arrow"
+                                                     style="width:15px;margin-right:10px">
+                                            </div>
+                                            <span>You can delete an already sent message up until 15 minutes from the time the message is first sent.</span>
+                                        </li>
+
+
+                                        <li class="d-flex align-items-baseline mb-3">
+                                            <div>
+                                                <img src="images/forward-arrow.svg" alt="arrowr"
+                                                     style="width:15px;margin-right:10px">
+                                            </div>
+                                            <span>Feature provided to the Admin to delete any user’s individual message line until 48 hours from the time the message is first sent.</span>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <ul class="list-unstyled" style="font-size:16px;color: #222020;">
+                                        <li class="d-flex align-items-baseline mb-3">
+                                            <div>
+                                                <img src="images/forward-arrow.svg" alt="arrow"
+                                                     style="width:15px;margin-right:10px">
+                                            </div>
+                                            <span>Once a message is deleted, a default message which reads “This message was deleted.” is displayed in place of the originally deleted message.</span>
+                                        </li>
+                                        <li class="d-flex align-items-baseline mb-3">
+                                            <div>
+                                                <img src="images/forward-arrow.svg" alt="arrow"
+                                                     style="width:15px;margin-right:10px">
+                                            </div>
+                                            <span>An edited message displays the “(Edited)” message tag over it.</span>
+                                        </li>
+                                        <li class="d-flex align-items-baseline mb-3">
+                                            <div>
+                                                <img src="images/forward-arrow.svg" alt="arrowr"
+                                                     style="width:15px;margin-right:10px">
+                                            </div>
+                                            <span>You can not only delete the text message, but also delete the attached files i.e. PDFs, images etc.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="pills-screenshot">
+                        <div class="tab-pane">
+                            <div>
+
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                       Go to Settings Menu.
+                                        <img src="images/app_screen/setting.png" alt="arrow" style="max-width:100%;"
+                                             class="my-4">
+                                    </span>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                        In Settings, go to General Settings and Enable the Chat Edit/Delete App by checking the box.
+                                        <img src="images/app_screen/chat general setting.png" alt="arrow"
+                                             style="max-width:100%;" class="my-4">
+                                    </span>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                       Once Enabled, you will see another checkbox appear named “Allow Admin to delete any chat.” If you wish to enable the feature, you may check the box and save the settings that you have done.
+                                        <img src="images/app_screen/ks_general_setting_feature.png" alt="arrow"
+                                             style="max-width:100%;" class="my-4">
+                                    </span>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                        On Enabling the Ksolves Odoo Chat/Edit app, you will notice Edit Icon and Delete Icon appear along with your chats..
+                                        <img src="images/app_screen/chat edit delete icons.png" alt="arrow"
+                                             style="max-width:100%;" class="my-4">
+                                    </span>
+                                    </li>
+                                </ul>
+
+
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                        In order to edit an already sent message, select the Edit Icon, and then edit your message as intended and update the new message.
+                                        <img src="images/app_screen/edit message.png" alt="arrow"
+                                             style="max-width:100%;" class="my-4">
+                                    </span>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                       An “(Edited)” tag is displayed over an edited message.
+                                        <img src="images/app_screen/edited_tag.png" alt="arrow" style="max-width:100%;"
+                                             class="my-4">
+                                    </span>
+                                    </li>
+                                </ul>
+
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                        In order to delete an already sent message, select the Delete Icon.
+                                        <img src="images/app_screen/delete_icon.png" alt="arrow" style="max-width:100%;"
+                                             class="my-4">
+                                    </span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                        Once you select the option to delete an already sent message, a warning pops up asking for your final approval. Select Ok to proceed with your deletion.
+                                        <img src="images/app_screen/delete_confirm.png" alt="arrow"
+                                             style="max-width:100%;" class="my-4">
+                                    </span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                         Once a message is deleted by a user, a default message which reads “This message was deleted” is displayed in place of the originally deleted message.
+                                        <img src="images/app_screen/deleted_message.png" alt="arrow"
+                                             style="max-width:100%;" class="my-4">
+
+                                    </span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled pl-0  bg-white" style="font-size:15px;">
+                                    <li class="d-flex align-items-baseline mb-2 p-3">
+                                    <span>
+                                        <img src="images/forward-arrow01.svg" alt="arrow"
+                                             style="width:15px;margin-right:10px">
+                                         If an admin deletes a user’s message, a default message which reads “Admin has deleted this message” is displayed in place of the originally deleted message.
+                                        <img src="images/app_screen/ks_admin_has_deleted.png" alt="arrow"
+                                             style="max-width:100%;" class="my-4">
+
+                                    </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                <img src="images/play.png" alt="ksolves" class="position-absolute"-->
+                    <!--                        style="bottom: 0px; width: 33px; right: 0; transform: translateY(50%) translateX(100%) rotate(90deg) !important;">-->
+
+
+                    <!-- faq tab-->
+                    <div class="tab-pane fade" id="pills-contact_2">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-8" style="position: relative;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Release">
+                        <section class="card mb-5" style="border: none;">
+                            <div class="card-body pb-5">
+                                <div class="text-center pb-5 pt-4">
+                                    <h2 style="font-weight: 600; font-size: 2.5rem;">Our Releases</h2>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-sm-8 col-xl-10 mx-auto">
+                                        <span style="background-color: #7A7979;width:4px;height:100%;top: 0;left: 55px;"></span>
+                                        <div class="pb-3">
+                                            <div class="row pt-5 m-0">
+                                                <div class="col-md-3">
+                                                    <h4 style="font-size:16px; color:#7A7979; margin:0; line-height:26px; font-family:'Inter', sans-serif">
+                                                        Latest Release 1.0.2</h4>
+                                                    <span style="font-size:14px; color:#7A7979; display:block; margin-bottom:20px; font-family:'Inter', sans-serif">
+                                         29th June, 2023 </span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div style="margin:0 0 10px">
+                                                        <div style="display:inline-block; padding:0px 8px; color:#7A7979; background-color:#FFD8D8; border-radius:20px">
+                                                            Fix
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex m-0"
+                                                         style="color:#7A7979; font-family:'Inter', sans-serif">
+                                                        <ul class="pl-3 mb-0" style="color:#7A7979">
+                                                            <li>
+                                                                User to be able to edit only his own messages, and not
+                                                                those of others.
+                                                            </li>
+                                                            <li>
+                                                                user to be able to delete only their own messages,
+                                                                regardless of whether the configuration option is
+                                                                checked or not. And if it is checked, the Admin user can
+                                                                delete his messages and those of the other users.
+                                                            </li>
+                                                            <li>
+                                                                When the Admin user deletes a message, the edit and
+                                                                delete icons still appear, and the user can edit the
+                                                                message again.
+                                                            </li>
+                                                            <li>
+                                                                Edit and Delete icon will come on hovering the messages.
+                                                            </li>
+                                                            <li>
+                                                                If the Message is edited then it shows edited by default
+                                                                on that message.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div style="padding:0px 0 10px; border-bottom:1px solid #E3E3E3">
+                                            </div>
+
+                                            <div class="row pt-5 m-0">
+                                                <div class="col-md-3">
+                                                    <h4 style="font-size:16px; color:#7A7979; margin:0; line-height:26px; font-family:'Inter', sans-serif">
+                                                        Release 1.0.1</h4>
+                                                    <span style="font-size:14px; color:#7A7979; display:block; margin-bottom:20px; font-family:'Inter', sans-serif">
+                                         6th June, 2023 </span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div style="margin:0 0 10px">
+                                                        <div style="display:inline-block; padding:0px 8px; color:#7A7979; background-color:#FFD8D8; border-radius:20px">
+                                                            Fix
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex m-0"
+                                                         style="color:#7A7979; font-family:'Inter', sans-serif">
+                                                        <ul class="pl-3 mb-0" style="color:#7A7979">
+                                                            <li>
+                                                                If create the database with "Spanish / Español" as
+                                                                Language and "Spain" as Country then the module doesn't
+                                                                work.
+                                                            </li>
+                                                            <li>
+                                                                when the "Enable" setting option is checked, Odoo throws
+                                                                an error while creating a contact, sales order, etc.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding:0px 0 10px; border-bottom:1px solid #E3E3E3">
+                                            </div>
+                                            <div class="row pt-5 m-0">
+                                                <div class="col-md-3">
+                                                    <h4 style="font-size:16px; color:#7A7979; margin:0; line-height:26px; font-family:'Inter', sans-serif">
+                                                        Release 1.0.0</h4>
+                                                    <span style="font-size:14px; color:#7A7979; display:block; margin-bottom:20px; font-family:'Inter', sans-serif">
+                                          22nd May, 2023 </span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div style="margin:0 0 10px">
+                                                        <div style="display:inline-block; padding:0px 8px; color:#7A7979; background-color:#FFD8D8; border-radius:20px">
+                                                            New Version
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex m-0"
+                                                         style="color:#7A7979; font-family:'Inter', sans-serif">
+                                                        <ul class="pl-3 mb-0">
+                                                            <li style="color:#7A7979">
+                                                                Latest version 14 release of Odoo Chat Edit/Delete.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div style="padding:0px 0 10px; border-bottom:1px solid #E3E3E3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!--        </div>-->
+
+                <!-- container End -->
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+    </div>
+</div>
+</body>
+</html>

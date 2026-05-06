@@ -1,0 +1,12 @@
+/*
+ * Styles for chat_edit_and_delete module (Odoo 17)
+ *
+ * Styles for inline editing and message actions
+ */
+
+/* Style for "deleted" messages in chatter */
+.o-mail-Message .ks_deleted_message {
+    color: #adb5bd;
+    font-style: italic;
+}
+

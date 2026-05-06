@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mail_message_chat_user,mail.message.chat.user,mail.model_mail_message,group_chat_user,1,1,0,0
+access_mail_message_chat_admin,mail.message.chat.admin,mail.model_mail_message,group_chat_admin,1,1,0,1

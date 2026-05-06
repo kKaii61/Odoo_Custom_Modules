@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.ks.chat</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="100"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form"
+                       position="inside">
+                    <app data-string="Tracking Manage" string="Tracking" name="chat_edit_and_delete"
+                         groups="chat_edit_and_delete.group_chat_admin">
+                        <block title="Tracking"
+                               name="tracking_record">
+                            <setting id="ks_chat_edit_delete_setting"
+                                     string="Chat Edit/Delete"
+                                     help="Enable editing and deleting messages in chatter and discuss">
+                                <field name="chat_enable"/>
+                            </setting>
+                            <setting id="ks_admin_delete_setting"
+                                     string="Admin Delete Access"
+                                     help="Allow Admin to delete any message within 48 hours"
+                                     invisible="not chat_enable">
+                                <field name="admin_delete_access"/>
+                            </setting>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
