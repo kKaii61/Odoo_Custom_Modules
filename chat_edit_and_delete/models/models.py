@@ -8,15 +8,18 @@ class MailMessage(models.Model):
     msg_del = fields.Char()
     msg_edit = fields.Boolean()
 
-    # Function to delete the message and changes the message to notification.
+    # Function to delete the tracking message and changes the message to notification.
     @api.model
     def action_ui_delete_message(self, message_id):
+        # Check if chat edit/delete is enabled
+        if not self.env.company.chat_enable:
+            raise AccessError("Chat edit/delete functionality is disabled. Contact your administrator.")
+        
         # Check if user has delete permission
         if not self.env.user.has_group('chat_edit_and_delete.group_chat_admin'):
             raise AccessError("You don't have permission to delete messages. Contact your administrator.")
         
-        admin_delete_access = self.env['ir.config_parameter'].sudo().get_param(
-            'base_setup.admin_delete_access')
+        admin_delete_access = self.env.company.admin_delete_access
         message = self.browse(message_id)
         date = message.create_date
         present = datetime.datetime.now()
@@ -59,6 +62,10 @@ class MailMessage(models.Model):
     # Function to set the value of msg_edit is true if message is updated.
     @api.model
     def action_ui_edit_message(self, message_id, state):
+        # Check if chat edit/delete is enabled
+        if not self.env.company.chat_enable:
+            raise AccessError("Chat edit/delete functionality is disabled. Contact your administrator.")
+        
         # Check if user has edit permission
         if not self.env.user.has_group('chat_edit_and_delete.group_chat_user'):
             raise AccessError("You don't have permission to edit messages. Contact your administrator.")
@@ -99,7 +106,7 @@ class ResConfigSettings(models.TransientModel):
     admin_delete_access = fields.Boolean(
         string="Admin Delete Access",
         check_company=True,
-        related='company_id.chat_enable',
+        related='company_id.admin_delete_access',
         readonly=False,
     )
 
@@ -116,18 +123,27 @@ class ResCompany(models.Model):
         string="Enable Chat Edit/Delete"
     )
     admin_delete_access = fields.Boolean(
-        string="Admin Delete Access"
+        string="Admin Delete Access", default=True
     )
 
 
 class IrHttp(models.AbstractModel):
     _inherit = 'ir.http'
 
+
     def session_info(self):
-        rec = super().session_info()
-        rec['chat_enable'] = self.env.company.sudo().chat_enable
-        rec['admin_delete_access'] = self.env.company.sudo().admin_delete_access
-        # Add group membership info for frontend
-        rec['is_chat_user'] = self.env.user.has_group('chat_edit_and_delete.group_chat_user')
-        rec['is_chat_admin'] = self.env.user.has_group('chat_edit_and_delete.group_chat_admin')
-        return rec
+        session = super(IrHttp, self).session_info()
+        user = self.env.user
+        chat_enable = self.env.company.sudo().chat_enable
+        admin_delete_access  = self.env.company.sudo().admin_delete_access
+        is_chat_user= user.has_group('chat_edit_and_delete.group_chat_user')
+        is_chat_admin = user.has_group('chat_edit_and_delete.group_chat_admin')
+        return {
+            **session,
+            "chat_permission": {
+                "chat_enable": chat_enable,
+                "admin_delete_access": admin_delete_access,
+                "is_chat_user": is_chat_user,
+                "is_chat_admin": is_chat_admin,
+            },
+        }

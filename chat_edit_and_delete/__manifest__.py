@@ -6,7 +6,7 @@
 Chat Edit & Delete for Odoo 17
 ===================================
 
-This module extends Odoo's messaging capabilities by allowing users to edit and delete messages in chatter and discuss views, including tracking/notification messages which are normally read-only.
+This module extends Odoo's messaging capabilities by allowing users to edit and delete tracking messages/messages in chatter and discuss views, including tracking/notification messages which are normally read-only.
 
 Key Features:
 • Edit messages within configurable time limits
@@ -19,7 +19,7 @@ Key Features:
 Perfect for teams that need flexibility in message management while maintaining security controls.
     """,
     'author': "Kainowf",
-    'website': "https://kainowf.com/",
+    'website': "https://kainowf.vercel.app/",
     'category': 'Tools',
     'version': '17.0.1.0.2',
     'license': 'LGPL-3',

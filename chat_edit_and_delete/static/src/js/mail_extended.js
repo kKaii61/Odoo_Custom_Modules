@@ -34,11 +34,15 @@ patch(Message.prototype, {
      * - Chat User: cannot delete (only edit)
      */
     get deletable() {
-        if (!session.chat_enable) {
+        const chat_enable = session.chat_permission.chat_enable;
+        const admin_delete_access = session.chat_permission.admin_delete_access;
+        const is_chat_admin = session.chat_permission.is_chat_admin;
+        const is_chat_user = session.chat_permission.is_chat_user;
+        if (!chat_enable) {
             return super.deletable;
         }
         // Only Chat Admin group can delete
-        if (!session.is_chat_admin) {
+        if (!is_chat_admin) {
             return false;
         }
         if (!this.props.hasActions) {
@@ -52,11 +56,11 @@ patch(Message.prototype, {
         const diffMinutes = DateTime.now().diff(message.datetime, "minutes").minutes;
 
         // Chat Admin with admin_delete_access enabled -> 48 hours, any message
-        if (session.is_chat_admin && session.admin_delete_access) {
+        if (is_chat_admin && admin_delete_access) {
             return diffMinutes < 2880;
         }
         // Chat Admin without admin_delete_access -> 15 min, own messages only
-        if (session.is_chat_admin && message.isSelfAuthored) {
+        if (is_chat_admin && message.isSelfAuthored) {
             return diffMinutes < 15;
         }
         return false;
@@ -68,11 +72,15 @@ patch(Message.prototype, {
      * - Chat User (and Chat Admin): can edit own messages within 15min
      */
     get editable() {
-        if (!session.chat_enable) {
+        const chat_enable = session.chat_permission.chat_enable;
+        const admin_delete_access = session.chat_permission.admin_delete_access;
+        const is_chat_admin = session.chat_permission.is_chat_admin;
+        const is_chat_user = session.chat_permission.is_chat_user;
+        if (!chat_enable) {
             return super.editable;
         }
         // Only Chat User group (or higher) can edit
-        if (!session.is_chat_user) {
+        if (!is_chat_user) {
             return false;
         }
         if (!this.props.hasActions) {
@@ -94,7 +102,7 @@ patch(Message.prototype, {
         const diffMinutes = DateTime.now().diff(message.datetime, "minutes").minutes;
 
         // Chat User can edit within 15 minutes
-        if (session.is_chat_user && diffMinutes < 15) {
+        if (is_chat_user && diffMinutes < 15) {
             return true;
         }
         return false;
@@ -106,7 +114,11 @@ patch(Message.prototype, {
      * (replaces body with "This message was deleted").
      */
     onClickDelete() {
-        if (!session.chat_enable) {
+        const chat_enable = session.chat_permission.chat_enable;
+        const admin_delete_access = session.chat_permission.admin_delete_access;
+        const is_chat_admin = session.chat_permission.is_chat_admin;
+        const is_chat_user = session.chat_permission.is_chat_user;
+        if (!chat_enable) {
             return super.onClickDelete(...arguments);
         }
         this.env.services.dialog.add(MessageConfirmDialog, {
